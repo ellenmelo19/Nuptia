@@ -1,0 +1,57 @@
+import 'package:flutter/material.dart';
+
+class cerimonyItem extends StatefulWidget{
+  final cerimonyItem _data
+
+  const cerimonyItem({
+    super.key,
+    required Map<String,Color> colorPallete,
+    required cerimonyItem data
+  }) : _colorPallete = colorPallete, _data = data;
+
+   @override
+  State<cerimonyItem> createState() => _CerimonyItemState();
+  final Map<String,Color> _colorPallete;
+}
+
+class _CerimonyItemState extends State<cerimonyItem>{
+  @override
+  Widget build(BuildContext context) {
+    return Column(children: <widget>[
+      Stack(
+        children: <Widget>[
+          ClipRRect(
+            borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(15),
+            topRight: Radius.circular(15),
+            ),
+            child: Image.network(
+              widget._data.imageURL height: 250, width: double.infinity, fit: BoxFit.cover,
+            ),
+          ),
+          Positioned( right: 10, bottom: 20,
+            child: Container( width: 300, color: widget._colorPallete['background'],
+              padding: EdgeInsets.symmetric( vertical: 5, horizontal: 20,),
+              child: Text(
+                widget._data.title, style: TextStyle(fontSize: 26, color: widget._colorPallete['text'],),
+                softWrap: true, // Quebra de linha
+                overflow: TextOverflow.fade, // Em caso de overflow
+              ),
+            ),
+          ),
+        ],      
+      ),
+      Card(
+        padding : EdgeInsets.all(8.0),
+        child Row(
+          children: [
+            text
+          ]
+        )
+      )
+    ]);
+    
+    
+  }
+  
+}

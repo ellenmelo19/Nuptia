@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:app/widgets/cerimonyItemList.dart';
 
 class dashboard extends StatefulWidget {    
 
@@ -32,14 +33,92 @@ class _DashboardState extends State<dashboard>{
     
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      body: Center(
+      body: SingleChildScrollView(child : Container(
+        padding: EdgeInsets.all(32),
+        color: widget._colorPallete['background'],
         child: Column(
-          children: [
-
+          crossAxisAlignment: CrossAxisAlignment.start,
+          
+          children: <Widget>[
+            Container(
+              child: Text(
+                "Bolo",
+                style: TextStyle(
+                  fontSize: 24, 
+                  fontWeight: FontWeight.bold,
+                  color: widget._colorPallete['text']
+                ),
+              ),
+              margin: EdgeInsets.only(bottom: 16),
+            ),
+            Cerimonyitemlist(dataArray: []),            
             
-          ],
-        )          
-      ),
+            Container(
+              child: Text(
+                "Vestimentas",
+                style: TextStyle(
+                  fontSize: 24, 
+                  fontWeight: FontWeight.bold,
+                  color: widget._colorPallete['text']
+                ),
+              ),
+              margin: EdgeInsets.only(bottom: 16, top: 24),
+                ),
+              
+              Container(
+              child: Text(
+                "Alianças",
+                style: TextStyle(
+                  fontSize: 24, 
+                  fontWeight: FontWeight.bold,
+                  color: widget._colorPallete['text']
+                ),
+              ),
+              margin: EdgeInsets.only(bottom: 16, top: 24),
+                ),
+
+              Container(
+              child: Text(
+                "Espaço",
+                style: TextStyle(
+                  fontSize: 24, 
+                  fontWeight: FontWeight.bold,
+                  color: widget._colorPallete['text']
+                ),
+              ),
+              margin: EdgeInsets.only(bottom: 16, top: 24),
+                ),
+
+              Container(
+              child: Text(
+                "Organizadora",
+                style: TextStyle(
+                  fontSize: 24, 
+                  fontWeight: FontWeight.bold,
+                  color: widget._colorPallete['text']
+                ),
+              ),
+              margin: EdgeInsets.only(bottom: 16, top: 24),
+                ),
+
+              Container(
+              child: Text(
+                "Buffet",
+                style: TextStyle(
+                  fontSize: 24, 
+                  fontWeight: FontWeight.bold,
+                  color: widget._colorPallete['text']
+                ),
+              ),
+              margin: EdgeInsets.only(bottom: 16, top: 24),
+                ),
+
+              ],
+            ),
+          ),
+          
+
+        ),
         bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
